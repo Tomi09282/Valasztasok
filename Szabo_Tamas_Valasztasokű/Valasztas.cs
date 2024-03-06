@@ -94,7 +94,7 @@ namespace Szabo_Tamas_Valasztasokű
             for (int i = 1; i < 9; i++)
             {
                 int darab = valasztasok.Where(x => x.sorszam == i).Max(x => x.szavazatok);
-                Console.WriteLine($"{i}. kerulet: {darab}DB szavazattal {valasztasok.Where(x => x.szavazatok == darab).Select(x => x.vnev).ToList()[0]} {valasztasok.Where(x => x.szavazatok == darab).Select(x => x.knev).ToList()[0]}");
+                Console.WriteLine($"{i}. kerulet: {darab}DB szavazattal {valasztasok.Where(x => x.szavazatok == darab && x.sorszam == i).Select(x => x.vnev).ToList()[0]} {valasztasok.Where(x => x.szavazatok == darab).Select(x => x.knev).ToList()[0]}");
             }
 
         }
